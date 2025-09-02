@@ -89,14 +89,45 @@ dic1.update(dic2) # dic1에 dic2의 값을 뒤에 넣는다. 단, 키가 중복�
 print(dic1)'''
 
 # keys, values, items
-dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
+'''dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
 print(dic1.__getitem__(1))
 print(dic1.values())
 print(dic1.keys())
 print("-=")
 for keys in dic1:
     print(keys)
-    print(dic1.values())
+    print(dic1.values())'''
+
+# items
+'''dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
+for k, v in dic1.items():
+    print(k, "----", v)'''
+
+# pop, pop.item
+'''dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
+print(dic1)
+# print(dic1.pop(4))
+print(dic1.popitem())
+print(dic1)
+print(dic1.popitem())
+print(dic1)'''
+
+# clear() 딕셔너리 키 값 모두 삭제
+'''dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
+print(dic1)
+print(dic1.clear()) # None
+print(dic1)'''
+
+# Setdefault : 이미 설정된 키에는 적용 안 됌.
+dic1 = {1:"hbin", 2:"wlgP", 3:"hhh", 4:"two"}
+print(dic1)
+# dic1[1] = "HBIN"
+# print(dic1)
+dic1.setdefault(5, "HXXBIN") # 설정되어있는 키가 없다면 추가 가능
+print(dic1)
+
+
+
 
 
 
