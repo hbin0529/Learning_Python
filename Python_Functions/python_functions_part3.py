@@ -45,18 +45,86 @@ f2()'''
 
 # Lambda Function
 # 람다 함수
+'''
+s = lambda n:n*n
+print(s(4))
 
+s = lambda n, m:n+m
+print(s(4, 9))
 
+bigger = lambda a, b : a if a > b else b
+print(bigger(1, 2))
+'''
 
+# without filter
+'''
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
+def iseven(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
 
+lst2 = []
+for n in lst:
+    if iseven(n) == True:
+        lst2.append(n)
+print(lst2)
+'''
 
+#######2nd program for even with filter
+'''
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
+def iseven(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+lst2 = []
+s = list(filter(iseven, lst))
+print(s)
+'''
+'''
+####### 3rd filter + lambda 방식
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+s = list(filter(lambda n: n % 2 == 0, lst))
+print(s)
+'''
 
+'''
+# list 컴프리헨션 방식
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+s = [n for n in lst if n % 2 == 0]
+print(s)
+'''
+'''
+#map
+lst = [1, 2, 3, 4, 5, 6]
+def sqr(n):
+    return n * n
+lst2 = list(map(sqr, lst))
+print(lst2)
 
+# map with lambda
+lst = [1, 2, 3, 4, 5, 6]
+lst2 = [1, 3, 5, 7, 9, 11]
+lst3 = list(map(lambda n, m: n**m, lst, lst2)) # n을 받아 m 만큼 제곱
+print(list(lst3))
+'''
 
-
-
+'''
+# Reducer
+from functools import reduce # 내장 함수가 아니라 받아와야함
+lst = [1, 3, 5, 4, 7, 11, 123, 65]
+result = reduce(lambda x, y: x + y, lst) # lst의 값을 ((((x+y)+y)+y)...+y)수행
+print(result)
+'''
+# first 100 numbers sum n = n * (n + 1) / 2
+from functools import reduce
+result = reduce(lambda x, y: x + y, range(0, 101))
+print(result)
 
 
 
